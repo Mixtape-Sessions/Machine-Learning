@@ -58,8 +58,11 @@ Shift-Share Instrumental Variables (SSIV) are used to address endogeneity and se
 
 ## Coding Labs
 
-[RCT to Regression](https://github.com/Mixtape-Sessions/Shift-Share/blob/main/Labs/RCT%20to%20Regression.ipynb)
+1. [RCT to Regression](https://github.com/Mixtape-Sessions/Shift-Share/blob/main/Labs/RCT%20to%20Regression.ipynb)
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Mixtape-Sessions/Machine-Learning/blob/main/Labs/RCT%20to%20Regression.ipynb)
 
-[Predication](https://github.com/Mixtape-Sessions/Shift-Share/blob/main/Labs/Prediction.ipynb)
+2. [Predication](https://github.com/Mixtape-Sessions/Shift-Share/blob/main/Labs/Prediction.ipynb)
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Mixtape-Sessions/Machine-Learning/blob/main/Labs/Prediction.ipynb)
 
-[Causal via Predication](https://github.com/Mixtape-Sessions/Shift-Share/blob/main/Labs/Causal%20via%20Prediction.ipynb)
+3. [Causal via Predication](https://github.com/Mixtape-Sessions/Shift-Share/blob/main/Labs/Causal%20via%20Prediction.ipynb)
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Mixtape-Sessions/Machine-Learning/blob/main/Labs/Causal%20via%20Prediction.ipynb)
