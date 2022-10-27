@@ -8,7 +8,7 @@ Shift-Share Instrumental Variables (SSIV) are used to address endogeneity and se
 
 ![About This Workshop](img/readme_schedule.png)
 
-## Day 1
+### Day 1
 
 1. What’s your question? (prediction vs. causality)
 
@@ -22,7 +22,7 @@ Shift-Share Instrumental Variables (SSIV) are used to address endogeneity and se
   - lasso
   - random forest
 
-## Day 2
+### Day 2
 
 1. Where does ML prediction fit within causal inference?
   - flexibly adjust for covariates
@@ -37,7 +37,7 @@ Shift-Share Instrumental Variables (SSIV) are used to address endogeneity and se
   - Implementation
 
 
-### Readings
+## Readings
 
 [Kleinberg, Ludwig, Mullainathan, and Obermeyer (2015)](https://github.com/Mixtape-Sessions/Machine-Learning/raw/main/Readings/Kleinberg_Ludwig_Mullainathan_Obermeyer_2015.pdf)
 
@@ -50,13 +50,13 @@ Shift-Share Instrumental Variables (SSIV) are used to address endogeneity and se
 [Varian (2014)](https://github.com/Mixtape-Sessions/Machine-Learning/raw/main/Readings/Varian_2014.pdf)
 
 
-### Slides
+## Slides
 
 [Day 1](https://github.com/Mixtape-Sessions/Machine-Learning/raw/main/Slides/Day-1.pdf)
 
 [Day 2](https://github.com/Mixtape-Sessions/Machine-Learning/raw/main/Slides/Day-2.pdf)
 
-### Coding Labs
+## Coding Labs
 
 [RCT to Regression](https://github.com/Mixtape-Sessions/Shift-Share/blob/main/Labs/RCT%20to%20Regression.ipynb)
 
