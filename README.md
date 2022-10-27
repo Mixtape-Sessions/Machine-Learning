@@ -39,15 +39,18 @@ Shift-Share Instrumental Variables (SSIV) are used to address endogeneity and se
 
 ## Readings
 
+The following is a set of introductory readings for machine learning and causal inference and is in a good potential reading order
+
 [Kleinberg, Ludwig, Mullainathan, and Obermeyer (2015)](https://github.com/Mixtape-Sessions/Machine-Learning/raw/main/Readings/Kleinberg_Ludwig_Mullainathan_Obermeyer_2015.pdf)
+
+[Varian (2014)](https://github.com/Mixtape-Sessions/Machine-Learning/raw/main/Readings/Varian_2014.pdf)
+
+[Mullainathan and Spiess (2017)](https://github.com/Mixtape-Sessions/Machine-Learning/raw/main/Readings/Mullainathan_Spiess_2017.pdf)
 
 [Athey and Imbens 2019)](https://github.com/Mixtape-Sessions/Machine-Learning/raw/main/Readings/Athey_Imbens_2019.pdf)
 
 [Belloni, Chernozhukov, and Hansen (2014)](https://github.com/Mixtape-Sessions/Machine-Learning/raw/main/Readings/Belloni_Chernozhukov_Hansen_2014.pdf)
 
-[Mullainathan and Spiess (2017)](https://github.com/Mixtape-Sessions/Machine-Learning/raw/main/Readings/Mullainathan_Spiess_2017.pdf)
-
-[Varian (2014)](https://github.com/Mixtape-Sessions/Machine-Learning/raw/main/Readings/Varian_2014.pdf)
 
 
 ## Slides
