@@ -6,7 +6,7 @@ output: github_document
 # RCTs to Regression
 
 
-Treatment indicator: $D_i \in \left\{0,1\right\}$
+Treatment indicator: $D_i \in \{0,1 \}$
 
 > *example:* eligibility for expanded Medicaid
 

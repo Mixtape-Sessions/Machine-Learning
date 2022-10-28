@@ -1,23 +1,66 @@
 # Prediction
 
 Outcome to be predicted: $Y_i$
+
 > *example:* a worker's log wage
 
 Characteristics (aka **features**): $X_i=\left(X_{1i},\ldots,X_{pi}\right)'$
+
 > *example:* education, age, state of birth, parents' education, cognitive ability, family background
 
 ```{r}
+library(tidyverse)
+library(fixest)
+library(glmnet)
 
+nlsy = read_csv('https://github.com/Mixtape-Sessions/Machine-Learning/blob/main/Labs/data/nlsy97.csv?raw=true')
+nlsy = nlsy |>
+  drop_na(educ)
 ```
 
 ## Least squares benchmark
 
 ```{r}
 
+# generate polynomials
+for (i in 1:10) {
+  nlsy[[paste0("educ", i)]] = nlsy$educ^i
+}
+# standardize our X matrix (doesn't matter for OLS, but will matter for lasso below)
+for (i in 1:10) {
+  var = paste0("educ", i)
+  nlsy[[var]] = (nlsy[[var]] - mean(nlsy[[var]])) / sd(nlsy[[var]])
+}
+
+reg = feols(
+  lnw_2016 ~ ..("^educ[0-9]+"), 
+  data = nlsy
+)
+nlsy$yhat = predict(reg)
 ```
 
 ```{r}
+# plot predicted values
+summ = nlsy |> 
+  group_by(educ) |> 
+  summarize(
+    mean_y = mean(lnw_2016),
+    mean_yhat = mean(yhat)
+  )
 
+ggplot(summ) + 
+  geom_point(
+    aes(x = educ, y = mean_y)
+  ) + 
+  geom_point(
+    aes(x = educ, y = mean_yhat), 
+    color = "red"
+  ) + 
+  labs(
+    title = "ln Wages by Education in the NLSY",
+    x = "Years of Schooling",
+    y = "ln Wages"
+  ) 
 ````
 
 As we can see, least squares linear regression can approximate any continuous function and can certainly be used for prediction. Include a rich enough set of transformations, and OLS predictions will yield unbiased estimates of the true ideal predictor, the conditional expectation function. But these estimates will be quite noisy. Penalized regression can greatly reduce the variance, at the expense of some bias. But if the bias reduction is great enough, the predictions can have lower MSE. Back to the whiteboard!
@@ -27,8 +70,33 @@ As we can see, least squares linear regression can approximate any continuous fu
 
 Welcome back! Let's see lasso in action:
 
+```{r}
+# for later
+Xbar_scaled = summ[, "educ"]
+
+# generate polynomials
+for (i in 1:10) {
+  Xbar_scaled[[paste0("educ", i)]] = Xbar_scaled$educ^i
+}
+# standardize our X matrix (doesn't matter for OLS, but will matter for lasso below)
+for (i in 1:10) {
+  var = paste0("educ", i)
+  Xbar_scaled[[var]] = 
+    (Xbar_scaled[[var]] - mean(Xbar_scaled[[var]])) / sd(Xbar_scaled[[var]])
+}
+
+Xbar_scaled$educ = NULL
+```
 
 ```{r}
+X = as.matrix(nlsy[, paste0("educ", 1:10)])
+y = nlsy[["lnw_2016"]]
+
+Xbar_scaled
+
+lasso1 = glmnet(x = X, y = y, alpha = 0.001)
+Xbar_scaled$ybarhar1 = predict(lasso1, newx = as.matrix(Xbar_scaled))[, 1]
+str(lasso1)
 
 ```
 
