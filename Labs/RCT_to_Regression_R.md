@@ -1,10 +1,13 @@
 
 # RCTs to Regression
 
-Treatment indicator: $D_i \in \left\{0,1\right\}$ \> *example:*
-eligibility for expanded Medicaid
+Treatment indicator: $D_i \in \left\{0,1\right\}$
 
-Outcome: $Y_i$ \> *example:* number of doctor visits in past 6 months
+> *example:* eligibility for expanded Medicaid
+
+Outcome: $Y_i$
+
+> *example:* number of doctor visits in past 6 months
 
 Potential outcomes $Y_i(0),Y_i(1)$
 
@@ -31,9 +34,9 @@ oregonhie = read_csv('https://github.com/Mixtape-Sessions/Machine-Learning/blob/
 ```
 
     ## Rows: 23741 Columns: 27
-    ## ── Column specification ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    ## ── Column specification ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
     ## Delimiter: ","
-    ## dbl (27): household_id, treatment, weight, rx_any, rx_num, doc_any, doc_num, er_any, er_num, hosp_any, hosp_num, ddddraw_sur_2, ddddraw_sur_3, ddddraw_sur_4, ddddraw_sur_5...
+    ## dbl (27): household_id, treatment, weight, rx_any, rx_num, doc_any, doc_num, er_any, er_num, hosp_any, hosp_num, ddddraw_sur_2, ddddraw_sur_3, ddddraw_sur_...
     ## 
     ## ℹ Use `spec()` to retrieve the full column specification for this data.
     ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
@@ -100,8 +103,7 @@ to control for in regressions?
 
 Careful investigators will find a set of regressors $X_i$ for which they
 are willing to assume treatment is as good as randomly assigned: $$
-D_i\perp\!\!\!\!\perp\left( Y_{i}\left( 0\right) ,Y_{i}\left( 1\right) \right) |X_{i}
-\text{.}
+D_i\perp\!\!\!\!\perp\left( Y_{i}\left( 0\right) ,Y_{i}\left( 1\right) \right) |X_{i}\text{.}
 $$ This combined with a linear model for the conditional expectation of
 \$% Y\_{i}( 0) \$ and \$Y\_{i}( 1) \$ given $X_{i}$ means we can
 estimate the average treatment via OLS on the following regression
@@ -136,14 +138,14 @@ $$
     ## RMSE: 3.52638   Adj. R2: 0.005394
 
 ``` r
-effect_cov = coef(reg)['treatment']
+effect_cov = coef(reg_cov)['treatment']
 
 cat(
   glue("Estimated effect of Medicaid eligibility on number of doctor visits (with controls): { sprintf('%.2f', effect_cov) }")
 )
 ```
 
-    ## Estimated effect of Medicaid eligibility on number of doctor visits (with controls): 0.27
+    ## Estimated effect of Medicaid eligibility on number of doctor visits (with controls): 0.31
 
 How did the estimate of the effect of Medicaid eligility change? What
 does that tell us about the relationship between the included regressors
@@ -164,12 +166,12 @@ To see where ML fits in, first remember that an equivalent way to
 estimate \$% \$ is the following three-step procedure:
 
 1.  Regress $Y_{i}$ on $X_{i}$ and compute the residuals,
-    $\tilde{Y}% _{i}=Y_{i}-\hat{Y}_{i}^{OLS}$, where
-    $\hat{Y}_{i}^{OLS}=X_{i}^{\prime }\left( X^{\prime }X\right) ^{-1}X^{\prime }Y$
+    $\tilde{Y}_{i}=Y_{i}-\hat{Y}_{i}^{OLS}$, where
+    $\hat{Y}_{i}^{OLS}=X_{i}^{\prime}\left( X^{\prime }X\right) ^{-1}X^{\prime }Y$
 
 2.  Regress $D_{i}$ on $X_{i}$ and compute the residuals,
-    $\tilde{D}% _{i}=D_{i}-\hat{D}_{i}^{OLS}$, where
-    $\hat{D}_{i}^{OLS}=X_{i}^{\prime }\left( X^{\prime }X\right) ^{-1}X^{\prime }D$
+    $\tilde{D}_{i}=D_{i}-\hat{D}_{i}^{OLS}$, where
+    $\hat{D}_{i}^{OLS}=X_{i}^{\prime}\left( X^{\prime }X\right) ^{-1}X^{\prime }D$
 
 3.  Regress $\tilde{Y}_{i}$ on $\tilde{D}_{i}$.
 
