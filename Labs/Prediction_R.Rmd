@@ -1,0 +1,133 @@
+# Prediction
+
+Outcome to be predicted: $Y_i$
+> *example:* a worker's log wage
+
+Characteristics (aka **features**): $X_i=\left(X_{1i},\ldots,X_{pi}\right)'$
+> *example:* education, age, state of birth, parents' education, cognitive ability, family background
+
+```{r}
+
+```
+
+## Least squares benchmark
+
+```{r}
+
+```
+
+```{r}
+
+````
+
+As we can see, least squares linear regression can approximate any continuous function and can certainly be used for prediction. Include a rich enough set of transformations, and OLS predictions will yield unbiased estimates of the true ideal predictor, the conditional expectation function. But these estimates will be quite noisy. Penalized regression can greatly reduce the variance, at the expense of some bias. But if the bias reduction is great enough, the predictions can have lower MSE. Back to the whiteboard!
+
+
+## Lasso in action
+
+Welcome back! Let's see lasso in action:
+
+
+```{r}
+
+```
+
+Plot results
+
+```{r}
+
+```
+
+Play around with different values for alpha to see how the fit changes!
+
+
+### Data-driven tuning parameters: Cross-validation
+
+Quick trip back to the whiteboard!
+
+### Lasso-guided variable selection
+
+For illustrative purposes we've been using lasso to determine the functional form for a single underlying regressor: education. But lasso's real power comes in selecting among a large number of regressors.
+
+```{r}
+
+```
+
+
+To try on your own: load the Oregon HIE data from earlier and try lassoing the OLS regression we did there. What do you notice?
+
+
+```{r}
+# Load Oregon HIE Data
+
+```
+
+
+## Ridge regression
+
+First, whiteboard. Ridge is another flavor of penalized regression, like lasso. But unlike lasso, ridge penalizes the squares (not the absolute values) of the coefficients. As a result, ridge shrinks coefficients toward zero, but not all the way. Let's give it a try.
+
+```{r}
+
+```
+
+### ...
+
+What do we learn about the relative performance of Lasso and Ridge in this setting? What could be the explanation?
+
+One way to compare Lasso and Ridge, is to visualize their coefficients:
+
+```{r}
+
+```
+
+## Elastic Net: best of both worlds?
+
+Elastic net combines lasso and ridge penalization. First, a bit of whiteboard, then let's give it a try.
+
+```{r}
+
+```
+
+### ...
+
+Not surprisingly, it doesn't look terribly different from lasso.
+
+
+## Decision Trees and Random Forests
+
+First, a trip to the whiteboard
+
+Import some utilities.
+
+```{r}
+
+```
+
+Let's illustrate how random forests average over a collection of individual trees:
+
+```{r}
+
+```
+
+We got trees down. Now to the whiteboard to talk about random forests
+
+```{r}
+
+```
+
+Enough with fake data. Let's use random forests to predict wages in the NLSY, just as we did for Lasso, Ridge, and Elastic net. Try it on your own! Hint: we want RandomForestRegressor, not RandomForestClassifier. For bonus points, cross-validate random forest's tuning parameters using GridSearchCV.
+
+```{r}
+# Try it on your own!
+
+# Import the proper package
+
+# instantiate your random forest object and fit it
+
+# print out training set and test set accuracy
+```
+
+How does Random Forest compare with Lasso?
+
+
