@@ -391,8 +391,7 @@ Not surprisingly, it doesn't look terribly different from lasso.
 ## Decision Trees and Random Forests
 
 
-Let's use random forests to predict wages in the NLSY, just as we did for Lasso, Ridge, and Elastic net. Try it on your own! Hint: we want RandomForestRegressor, not RandomForestClassifier. For bonus points, cross-validate random forest's tuning parameters using GridSearchCV.
-
+Let's use random forests to predict wages in the NLSY, just as we did for Lasso, Ridge, and Elastic net. Try it on your own!
 ```{r}
 forest = randomForest(x = X_train_scaled, y = y_train)
 plot(forest)

@@ -119,8 +119,10 @@ lasso1 = glmnet(x = X, y = y, alpha = 0.001)
 lasso2 = glmnet(x = X, y = y, alpha = 0.01)
 
 newX = as.matrix(summ[, paste0("educ", 1:10)])
-summ$yhat_lasso1 = predict(lasso1, newx = newX)[, 1]
-summ$yhat_lasso2 = predict(lasso2, newx = newX)[, 1]
+
+# Random value of lambda [, 70]
+summ$yhat_lasso1 = predict(lasso1, newx = newX)[, 70]
+summ$yhat_lasso2 = predict(lasso2, newx = newX)[, 70]
 ```
 
 Plot results
@@ -254,7 +256,7 @@ plot(cvfit)
 cvfit$lambda.min
 ```
 
-    ## [1] 0.008638186
+    ## [1] 0.01375443
 
 ### Lasso-guided variable selection
 

@@ -1,3 +1,7 @@
+---
+output: github_document
+---
+
 # Where ML Fits into Causal Inference (review)
 
 The traditional go-to tool for causal inference is multiple regression:
@@ -43,14 +47,14 @@ This is the basis for the two major methods we'll look at today: The first is "P
 
 # Post Double Selection Lasso (PDS Lasso)
 
-## Load useful packages: 
-pandas, numpy, linear_model (from sklearn), and KFold (from sklearn.model_selection)
-
 Try it yourself first
 
 ```{r}
 library(tidyverse)
 library(fixest)
+library(rsample)
+library(glmnet)
+library(randomForest)
 ```
 
 ```{r}
@@ -89,7 +93,7 @@ feols(
 
 
 
-###...
+### ...
 How does it compare to the simple regression? 
 
 But who is to say the controls we included are sufficient? We have a whole host (hundred!) of other potential controls, not to mention that perhaps the controls we did put in enter linearly. This is a job for ML!
@@ -107,8 +111,6 @@ potential_controls = setdiff(colnames(nlsy), c("lnw_2016", "black"))
 Don't forget to standard Xs, or choose the normalize=True option
 
 ```{r}
-library(glmnet)
-
 X = as.matrix(nlsy[, potential_controls])
 y = nlsy[["lnw_2016"]]
 
@@ -196,12 +198,40 @@ feols(y_resid ~ d_resid, nlsy)
 ### The real thing: with sample splitting
 
 ```{r}
+set.seed(5)
+N_folds = 5
+# 5 folds with equal 
+nlsy$fold_id = sample(1:N_folds, size = nrow(nlsy), replace = T)
 
-```
+nlsy$y_resid = 0
+nlsy$d_resid = 0
 
-You want standard errors, do you?
+# Loop through each fold, use other 4 folds to estimate
+for(i in 1:5) {
+  in_training = (nlsy$fold_id != i)
+  in_test = (nlsy$fold_id == i)
 
-```{r}
+  # Ridge regression for y using training
+  ridge_y = cv.glmnet(
+    x=X[in_training,], y=y[in_training], alpha = 0
+  )
+  # Calculate residuals for testing
+  nlsy[in_test, "y_resid"] =
+    y[in_test] - predict(ridge_y, newx = X[in_test, ])
+
+  # Ridge regression for d using training
+  ridge_d = cv.glmnet(
+    x=X[in_training,], y=d[in_training], alpha = 0
+  )
+  # Calculate residuals for testing
+  nlsy[in_test, "d_resid"] = 
+    d[in_test] - predict(ridge_d, newx = X[in_test, ])
+}
+
+# k-fold cross-validation ensures standard errors are fine
+feols(
+  y_resid ~ d_resid, data = nlsy, vcov = "hc1"
+)
 
 ```
 
@@ -210,5 +240,42 @@ You want standard errors, do you?
 
 
 
+```{r}
+set.seed(5)
+N_folds = 5
+# 5 folds with equal 
+nlsy$fold_id = sample(1:N_folds, size = nrow(nlsy), replace = T)
+
+nlsy$y_resid = 0
+nlsy$d_resid = 0
+
+# Loop through each fold, use other 4 folds to estimate
+for(i in 1:5) {
+  in_training = (nlsy$fold_id != i)
+  in_test = (nlsy$fold_id == i)
+
+  # Ridge regression for y using training
+  ridge_y = randomForest(
+    x = X[in_training,], y = y[in_training]
+  )
+  # Calculate residuals for testing
+  nlsy[in_test, "y_resid"] =
+    y[in_test] - predict(ridge_y, newdata = X[in_test, ])
+
+  # Ridge regression for d using training
+  ridge_d = randomForest(
+    x = X[in_training,], y = d[in_training]
+  )
+  # Calculate residuals for testing
+  nlsy[in_test, "d_resid"] = 
+    d[in_test] - predict(ridge_d, newdata = X[in_test, ])
+}
+
+# k-fold cross-validation ensures standard errors are fine
+feols(
+  y_resid ~ d_resid, data = nlsy, vcov = "hc1"
+)
+
+```
 
 
