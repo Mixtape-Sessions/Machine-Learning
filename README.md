@@ -61,11 +61,11 @@ The following is a set of introductory readings for machine learning and causal 
 
 ## Coding Labs
 
-1. [RCT to Regression](https://github.com/Mixtape-Sessions/Shift-Share/blob/main/Labs/RCT%20to%20Regression.ipynb)
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Mixtape-Sessions/Machine-Learning/blob/main/Labs/RCT%20to%20Regression.ipynb)
+1. [RCT to Regression](https://github.com/Mixtape-Sessions/Shift-Share/blob/main/Labs/python/RCT%20to%20Regression.ipynb)
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Mixtape-Sessions/Machine-Learning/blob/main/Labs/python/RCT%20to%20Regression.ipynb)
 
-2. [Predication](https://github.com/Mixtape-Sessions/Shift-Share/blob/main/Labs/Prediction.ipynb)
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Mixtape-Sessions/Machine-Learning/blob/main/Labs/Prediction.ipynb)
+2. [Predication](https://github.com/Mixtape-Sessions/Shift-Share/blob/main/Labs/python/Prediction.ipynb)
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Mixtape-Sessions/Machine-Learning/blob/main/Labs/python/Prediction.ipynb)
 
-3. [Causal via Predication](https://github.com/Mixtape-Sessions/Shift-Share/blob/main/Labs/Causal%20via%20Prediction.ipynb)
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Mixtape-Sessions/Machine-Learning/blob/main/Labs/Causal%20via%20Prediction.ipynb)
+3. [Causal via Predication](https://github.com/Mixtape-Sessions/Shift-Share/blob/main/Labs/python/Causal%20via%20Prediction.ipynb)
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Mixtape-Sessions/Machine-Learning/blob/main/Labs/python/Causal%20via%20Prediction.ipynb)
