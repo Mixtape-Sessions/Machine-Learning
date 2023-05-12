@@ -1,12 +1,12 @@
 ![Mixtape Sessions Banner](img/banner.png)
 <br/>
 
-![About This Workshop](img/readme_about.png)
+## About
 
 Machine Learning's wheelhouse is out-of-sample prediction, but these powerful methods can be deployed in service of causal inference. This two-session workshop will introduce the basics of machine learning prediction methods, including lasso and random forests and how they feature in causal inference methods like double machine learning (DML) and post-double selection lasso (PDS lasso). The course covers the conceptual and theoretical basis for the methods and also gets into the nuts and bolts of implementation in python and Stata using real-world data.
 
 
-![Schedule](img/readme_schedule.png)
+## Schedule
 
 ### Day 1
 
@@ -61,11 +61,11 @@ The following is a set of introductory readings for machine learning and causal 
 
 ## Coding Labs
 
-1. [RCT to Regression](https://github.com/Mixtape-Sessions/Shift-Share/blob/main/Labs/python/RCT%20to%20Regression.ipynb)
+1. [RCT to Regression](https://github.com/Mixtape-Sessions/Machine-Learning/blob/main/Labs/python/RCT%20to%20Regression.ipynb)
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Mixtape-Sessions/Machine-Learning/blob/main/Labs/python/RCT%20to%20Regression.ipynb)
 
-2. [Predication](https://github.com/Mixtape-Sessions/Shift-Share/blob/main/Labs/python/Prediction.ipynb)
+2. [Predication](https://github.com/Mixtape-Sessions/Machine-Learning/blob/main/Labs/python/Prediction.ipynb)
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Mixtape-Sessions/Machine-Learning/blob/main/Labs/python/Prediction.ipynb)
 
-3. [Causal via Predication](https://github.com/Mixtape-Sessions/Shift-Share/blob/main/Labs/python/Causal%20via%20Prediction.ipynb)
+3. [Causal via Predication](https://github.com/Mixtape-Sessions/Machine-Learning/blob/main/Labs/python/Causal%20via%20Prediction.ipynb)
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Mixtape-Sessions/Machine-Learning/blob/main/Labs/python/Causal%20via%20Prediction.ipynb)
