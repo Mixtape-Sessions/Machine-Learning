@@ -1,5 +1,5 @@
-![Mixtape Sessions Banner](img/banner.png)
-<br/>
+![Mixtape Sessions Banner](https://raw.githubusercontent.com/Mixtape-Sessions/Machine-Learning/main/img/banner.png)
+
 
 ## About
 
@@ -13,28 +13,28 @@ Machine Learning's wheelhouse is out-of-sample prediction, but these powerful me
 1. What’s your question? (prediction vs. causality)
 
 2. Standard tools of causal inference
-  - gold standard: RCT
-  - Multiple Regression
+   - gold standard: RCT
+   - Multiple Regression
 
 3. ML prediction tools
-  - prediction objective
-  - bias-variance tradeoff
-  - lasso
-  - random forest
+   - prediction objective
+   - bias-variance tradeoff
+   - lasso
+   - random forest
 
 ### Day 2
 
 1. Where does ML prediction fit within causal inference?
-  - flexibly adjust for covariates
-  - estimate heterogeneous treatment effects
+   - flexibly adjust for covariates
+   - estimate heterogeneous treatment effects
 
 2. Post-Double Selection Lasso
-  - Theory
-  - Implementation
+   - Theory
+   - Implementation
 
 3. Double Machine Learning
-  - Theory
-  - Implementation
+   - Theory
+   - Implementation
 
 
 ## Readings
@@ -50,7 +50,6 @@ The following is a set of introductory readings for machine learning and causal 
 [Athey and Imbens 2019)](https://github.com/Mixtape-Sessions/Machine-Learning/raw/main/Readings/Athey_Imbens_2019.pdf)
 
 [Belloni, Chernozhukov, and Hansen (2014)](https://github.com/Mixtape-Sessions/Machine-Learning/raw/main/Readings/Belloni_Chernozhukov_Hansen_2014.pdf)
-
 
 
 ## Slides
