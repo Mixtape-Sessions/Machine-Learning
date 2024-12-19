@@ -36,35 +36,40 @@ Machine Learning's wheelhouse is out-of-sample prediction, but these powerful me
    - Theory
    - Implementation
 
+## Slides
+
+[Day 1](https://nbviewer.org/github/Mixtape-Sessions/Machine-Learning/raw/main/Slides/Day-1.pdf)
+
+[Day 2](https://nbviewer.org/github/Mixtape-Sessions/Machine-Learning/raw/main/Slides/Day-2.pdf)
+
+## Coding Labs
+
+1. [RCT to Regression](https://github.com/Mixtape-Sessions/Machine-Learning/blob/main/Labs/python/RCT%20to%20Regression.ipynb)
+
+   [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Mixtape-Sessions/Machine-Learning/blob/main/Labs/python/RCT%20to%20Regression.ipynb)
+
+2. [Predication](https://github.com/Mixtape-Sessions/Machine-Learning/blob/main/Labs/python/Prediction.ipynb)
+
+   [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Mixtape-Sessions/Machine-Learning/blob/main/Labs/python/Prediction.ipynb)
+
+3. [Causal via Predication](https://github.com/Mixtape-Sessions/Machine-Learning/blob/main/Labs/python/Causal%20via%20Prediction.ipynb)
+
+   [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Mixtape-Sessions/Machine-Learning/blob/main/Labs/python/Causal%20via%20Prediction.ipynb)
+
 
 ## Readings
 
 The following is a set of introductory readings for machine learning and causal inference and is in a good potential reading order
 
-[Kleinberg, Ludwig, Mullainathan, and Obermeyer (2015)](https://github.com/Mixtape-Sessions/Machine-Learning/raw/main/Readings/Kleinberg_Ludwig_Mullainathan_Obermeyer_2015.pdf)
+[Kleinberg, Ludwig, Mullainathan, and Obermeyer (2015)](https://nbviewer.org/github/Mixtape-Sessions/Machine-Learning/raw/main/Readings/Kleinberg_Ludwig_Mullainathan_Obermeyer_2015.pdf)
 
-[Varian (2014)](https://github.com/Mixtape-Sessions/Machine-Learning/raw/main/Readings/Varian_2014.pdf)
+[Varian (2014)](https://nbviewer.org/github/Mixtape-Sessions/Machine-Learning/raw/main/Readings/Varian_2014.pdf)
 
-[Mullainathan and Spiess (2017)](https://github.com/Mixtape-Sessions/Machine-Learning/raw/main/Readings/Mullainathan_Spiess_2017.pdf)
+[Mullainathan and Spiess (2017)](https://nbviewer.org/github/Mixtape-Sessions/Machine-Learning/raw/main/Readings/Mullainathan_Spiess_2017.pdf)
 
-[Athey and Imbens 2019)](https://github.com/Mixtape-Sessions/Machine-Learning/raw/main/Readings/Athey_Imbens_2019.pdf)
+[Athey and Imbens 2019)](https://nbviewer.org/github/Mixtape-Sessions/Machine-Learning/raw/main/Readings/Athey_Imbens_2019.pdf)
 
-[Belloni, Chernozhukov, and Hansen (2014)](https://github.com/Mixtape-Sessions/Machine-Learning/raw/main/Readings/Belloni_Chernozhukov_Hansen_2014.pdf)
+[Belloni, Chernozhukov, and Hansen (2014)](https://nbviewer.org/github/Mixtape-Sessions/Machine-Learning/raw/main/Readings/Belloni_Chernozhukov_Hansen_2014.pdf)
 
 
-## Slides
 
-[Day 1](https://github.com/Mixtape-Sessions/Machine-Learning/raw/main/Slides/Day-1.pdf)
-
-[Day 2](https://github.com/Mixtape-Sessions/Machine-Learning/raw/main/Slides/Day-2.pdf)
-
-## Coding Labs
-
-1. [RCT to Regression](https://github.com/Mixtape-Sessions/Machine-Learning/blob/main/Labs/python/RCT%20to%20Regression.ipynb)
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Mixtape-Sessions/Machine-Learning/blob/main/Labs/python/RCT%20to%20Regression.ipynb)
-
-2. [Predication](https://github.com/Mixtape-Sessions/Machine-Learning/blob/main/Labs/python/Prediction.ipynb)
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Mixtape-Sessions/Machine-Learning/blob/main/Labs/python/Prediction.ipynb)
-
-3. [Causal via Predication](https://github.com/Mixtape-Sessions/Machine-Learning/blob/main/Labs/python/Causal%20via%20Prediction.ipynb)
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Mixtape-Sessions/Machine-Learning/blob/main/Labs/python/Causal%20via%20Prediction.ipynb)
